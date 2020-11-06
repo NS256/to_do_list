@@ -1,4 +1,5 @@
 const HELPMODALBACKGROUND = document.querySelector("#help-modal-background");
+const EDITMODALBACKGROUND = document.querySelector("#edit-modal-background");
 
 
 function showHelpModal(){
@@ -13,4 +14,13 @@ window.onclick = function(event){
     if (event.target == HELPMODALBACKGROUND) {
         hideHelpModal();
     }
+}
+
+
+function showEditModal(){
+    EDITMODALBACKGROUND.style.display = "block";
+}
+
+function hideEditModal(){
+    EDITMODALBACKGROUND.style.display = "none";
 }
