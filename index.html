@@ -28,26 +28,33 @@
             </tbody>
         </table>
     </main>
+
+        <!--help modal-->
     <div id="help-modal-background">
         <div id="help-modal" class="modal">
-            <span class="help-closeBtn close-button" onclick="hideHelpModal()">&times;</span>
-            <h2>Help</h2>
-            <p>You can add items to your to do list by typing in the text box and pressing Enter on your keyboard.</p>
-            <p>If you make a mistake you can add edit an item by clicking on the edit icon.</p>
-            <p>You can remove items from the list by clicking the delete button.</p>
+            <div>
+                <span class="help-closeBtn close-button" onclick="hideHelpModal()">&times;</span>
+                <h2>HELP</h2>
+                <h3>Adding a new task:</h3>
+                <p>Too add a new item to your to do list type it into the text box and press enter on your keyboard.</p>
+                <h3>Editing an existing task:</h3>
+                <p>If you make a mistake you can add edit an item by clicking on the edit icon.</p>
+                <h3>Remove a task from the list:</h3>
+                <p>You can remove items from the list by clicking the delete button.</p>
+            </div>
         </div>
-    </div>  
-
+    </div>
+        <!--edit modal-->
     <div id="edit-modal-background">
         <div id="edit-modal">
-            <span class="edit-closeBtn close-button" onclick="hideCloseModal()">&times;</span>
+            <span class="edit-closeBtn close-button" onclick="hideEditModal()">&times;</span>
             <h2>Edit to do list item:</h2>
             <div style="display: flex; justify-content: center;">
                 <input type="text" class="edit-list-item">
             </div>
             <div class="close-button-container">
-                <button class="close-model-button">Cancel</button>
-                <button class="close-model-button">Save</button>
+                <button class="close-model-button" onclick="hideEditModal()">Cancel</button>
+                <button class="close-model-button" onclick="updateListItem()">Save</button>
             </div>
         </div>
     </div>

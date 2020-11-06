@@ -1,6 +1,6 @@
 function addToDoList(event) {
     if (event.keyCode === 13) {
-        
+
         addToDoToTable(NEWITEMBOX.value);
         NEWITEMBOX.value = "";
     }
@@ -9,7 +9,7 @@ function addToDoList(event) {
 function addToDoToTable(item) {
     const TABLEBODY = document.querySelector("#to-do-list tbody");
     toDoListCount++;
-    
+
     var newRow = document.createElement("tr");
     newRow.setAttribute("id",`list-item-${toDoListCount}`);
     TABLEBODY.appendChild(newRow);
@@ -26,9 +26,9 @@ function addToDoToTable(item) {
 
     var newEditIcon = document.createElement("i");
     newEditIcon.setAttribute("class", "fas fa-edit list-button");
-    newEditIcon.setAttribute("onclick","");
+    newEditIcon.setAttribute("onclick","showEditModal(event)");
     newEditButtonContainer.appendChild(newEditIcon);
-    
+
     var newDeleteButtonContainer = document.createElement("td");
     newDeleteButtonContainer.setAttribute("class", "to-do-item-delete");
     newRow.appendChild(newDeleteButtonContainer);
@@ -38,9 +38,9 @@ function addToDoToTable(item) {
     newDeleteIcon.setAttribute("onclick", "removeToDoFromList(event)");
     newDeleteButtonContainer.appendChild(newDeleteIcon);
 
-    
 
-    
+
+
     //newDeleteIcon.addEventListener("click", function(event){}, false);
 }
 
@@ -48,7 +48,15 @@ function removeToDoFromList(event){
     event.target.parentNode.parentNode.remove()
 }
 
+window.onLoad = function(){
+    document.querySelector(".edit-list-item").focus();
+    document.querySelector(".edit-list-item").select();
+}
+
+
 const NEWITEMBOX = document.querySelector("#add-to-do-list");
+const EDITBOX = document.querySelector("#edit-modal input");
 var toDoListCount = 0;
 
 NEWITEMBOX.addEventListener("keyup", function(event) {addToDoList(event);}, false);
+EDITBOX.addEventListener("keyup", function(event){enterUpdateListItem(event)}, false);

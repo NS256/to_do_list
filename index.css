@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
 body {
     padding: 0px;
@@ -31,6 +33,7 @@ body {
     font-size: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-family: 'Arvo', serif;
 }
 
 #add-to-do-list {
@@ -44,9 +47,11 @@ body {
 
 #to-do-list {
     width: 60%;
+    max-width: 650px;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    font-size: 18px;
 }
 
 .list-button {
@@ -77,9 +82,28 @@ body {
     right: 0px;
     background-color: red;
     z-index: 2;
-    
-    animation-name: helpmodalopen;
-    animation-duration: 500ms;
+    vertical-align: middle;
+    display: table;
+    padding: 10px;
+}
+
+#help-modal h2 {
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+#help-modal h3 {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+#help-modal p {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .close-button {
@@ -123,7 +147,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-color: #6b9ac4;
-    top: 35%
+    top: 35%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #134074;
+    border-radius: 5px;
 }
 
 #edit-modal h2 {
@@ -149,8 +177,9 @@ body {
 }
 
 
-
+/*
 @keyframes helpmodalopen {
     from{opacity: 0}
     to{opacity: 1}
 }
+*/
