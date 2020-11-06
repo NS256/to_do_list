@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400&display=swap');
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #81a4cd;
+    color: white;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+
+#help-button:hover {
+    color: #303663;
+}
+
+.add-item {
+    width: 80%;
+    margin-top: 8vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #134074;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #008dd5;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.add-item h1 {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#add-to-do-list {
+    width: 65%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#to-do-list {
+    width: 60%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list-button {
+    cursor: pointer;
+    font-size: large;
+}
+
+.list-button:hover {
+    color: #303633;
+}
+
+#help-modal-background {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+#help-modal {
+    height: 100vh;
+    width: 400px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: red;
+    z-index: 2;
+    
+    animation-name: helpmodalopen;
+    animation-duration: 500ms;
+}
+
+.close-button {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #303633;
+}
+
+#help-button {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#edit-modal-background {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    /*display: none;*/
+}
+
+#edit-modal {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 500px;
+    height: 153px;
+    background-color: #6b9ac4;
+    top: 35%
+}
+
+#edit-modal h2 {
+    padding: 10px;
+    margin: 10px;
+}
+
+.edit-list-item {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+    width: 90%;
+}
+
+.close-model-button:hover {
+    cursor: pointer;
+}
+
+.close-button-container {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+}
+
+
+
+@keyframes helpmodalopen {
+    from{opacity: 0}
+    to{opacity: 1}
+}

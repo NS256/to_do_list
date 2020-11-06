@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title>
+    <link type="text/css" rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="JS/script.js" defer></script>
+    <script type="text/javascript" src="JS/modalSetup.js" defer></script>
+    <script src="https://kit.fontawesome.com/c0c5fd2bf3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <i id="help-button" class="fas fa-question-circle" onclick="showHelpModal()"></i>
+    <main>
+        <div class="add-item">
+            <h1>To Do List</h1>
+            <input id="add-to-do-list" type="text">
+        </div>
+        <table id="to-do-list">
+            <colgroup>
+                <col style="width: 97%;">
+                <col style="width: 3%;">
+                <col style="width: 3%; overflow: hidden;">
+            </colgroup>
+            <tbody>
+                <!--<tr id="list-item-1">
+                    <td>test</td>
+                    <td><i class="fas fa-window-close delete-button"></i></td>
+                </tr>-->
+            </tbody>
+        </table>
+    </main>
+    <div id="help-modal-background">
+        <div id="help-modal" class="modal">
+            <span class="help-closeBtn close-button" onclick="hideHelpModal()">&times;</span>
+            <h2>Help</h2>
+            <p>You can add items to your to do list by typing in the text box and pressing Enter on your keyboard.</p>
+            <p>If you make a mistake you can add edit an item by clicking on the edit icon.</p>
+            <p>You can remove items from the list by clicking the delete button.</p>
+        </div>
+    </div>  
+
+    <div id="edit-modal-background">
+        <div id="edit-modal">
+            <span class="edit-closeBtn close-button" onclick="hideCloseModal()">&times;</span>
+            <h2>Edit to do list item:</h2>
+            <div style="display: flex; justify-content: center;">
+                <input type="text" class="edit-list-item">
+            </div>
+            <div class="close-button-container">
+                <button class="close-model-button">Cancel</button>
+                <button class="close-model-button">Save</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
