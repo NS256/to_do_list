@@ -176,10 +176,7 @@ body {
     right: 12px;
 }
 
-
-/*
-@keyframes helpmodalopen {
-    from{opacity: 0}
-    to{opacity: 1}
+#reset-list-timer {
+    cursor: pointer;
+    text-decoration: underline;
 }
-*/

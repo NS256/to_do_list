@@ -1,8 +1,13 @@
 function addToDoList(event) {
     if (event.keyCode === 13) {
+        if (NEWITEMBOX.value != ""){
+            addToDoToTable(NEWITEMBOX.value);
+            NEWITEMBOX.value = "";
+            saveListToCookie();
+        } else {
 
-        addToDoToTable(NEWITEMBOX.value);
-        NEWITEMBOX.value = "";
+        }
+
     }
 }
 
@@ -40,18 +45,55 @@ function addToDoToTable(item) {
 
 
 
-
-    //newDeleteIcon.addEventListener("click", function(event){}, false);
 }
 
 function removeToDoFromList(event){
-    event.target.parentNode.parentNode.remove()
+    event.target.parentNode.parentNode.remove();
+    saveListToCookie();
 }
 
-window.onLoad = function(){
-    document.querySelector(".edit-list-item").focus();
-    document.querySelector(".edit-list-item").select();
+
+
+
+
+function saveListToCookie() {
+    const ALLLISTITEMS = document.querySelectorAll(".to-do-item");
+    var allItemValues = [];
+    var expiryDate = new Date();
+    expiryDate.setDate(expiryDate.getDate() + 30)
+    //console.log(expiryDate);
+
+    for (let element of ALLLISTITEMS){
+        allItemValues.push(element.innerHTML);
+    }
+
+    var jsonArray = JSON.stringify(allItemValues);
+
+    document.cookie = "toDoListItems=" + jsonArray + "; expires=" + expiryDate;
 }
+
+function getItemsFromCookie(){
+    const COOKIES = document.cookie.split("; ");
+    var itemsCookie;
+
+    for (let cookie of COOKIES){
+        if (cookie.includes("toDoListItems=")) {
+            itemsCookie = JSON.parse(cookie.replace("toDoListItems=",""));
+            addItemsFromCookie(itemsCookie);
+        }
+    }
+
+}
+
+function addItemsFromCookie(itemsArray) {
+    for (let i=0; i < itemsArray.length; i++){
+        addToDoToTable(itemsArray[i]);
+    }
+}
+
+
+
+
 
 
 const NEWITEMBOX = document.querySelector("#add-to-do-list");
@@ -60,3 +102,8 @@ var toDoListCount = 0;
 
 NEWITEMBOX.addEventListener("keyup", function(event) {addToDoList(event);}, false);
 EDITBOX.addEventListener("keyup", function(event){enterUpdateListItem(event)}, false);
+window.onLoad = function(){
+    document.querySelector(".edit-list-item").focus();
+    document.querySelector(".edit-list-item").select();
+}
+getItemsFromCookie();
