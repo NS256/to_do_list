@@ -99,6 +99,12 @@ body {
     padding-bottom: 0px;
 }
 
+#help-modal h4 {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 18px;
+}
+
 #help-modal p {
     margin-top: 0px;
     padding-top: 0px;
